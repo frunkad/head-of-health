@@ -1,5 +1,6 @@
 export interface Post {
     pid: string;
-    postBy: string;
+    uid: string;
     textContent: string;
+    timestamp: string;
 }

@@ -3,4 +3,7 @@ export interface User {
     email: string;
     photoURL?: string;
     displayName?: string;
+    followersCount?: number;
+    followingsCount?: number;
+    postsCount?: number;
 }

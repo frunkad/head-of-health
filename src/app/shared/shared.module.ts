@@ -8,9 +8,10 @@ import { AngularFireModule } from '@angular/fire';
 import { AuthService } from './services/auth.service';
 import { DatabaseService } from './services/database.service';
 import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [HeaderComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -24,6 +25,9 @@ import { RouterModule } from '@angular/router';
     AuthService,
     AngularFireAuth,
     AngularFireDatabase,
-    { provide: FunctionsRegionToken, useValue: 'us-central1' }]
+    { provide: FunctionsRegionToken, useValue: 'us-central1' }],
+  exports: [
+    HeaderComponent
+  ]
 })
 export class SharedModule { }

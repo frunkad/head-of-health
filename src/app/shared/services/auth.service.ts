@@ -62,6 +62,14 @@ export class AuthService {
       .then((result: firebase.auth.UserCredential) => {
         // The signed-in user info.
         this.fbuser = result.user;
+        const t_user = <User>{
+          displayName: result.user.displayName,
+          email: result.user.email,
+          photoURL: result.user.photoURL,
+          uid: result.user.uid
+        };
+        return this.db.updateUser(t_user);
+
         // this.db.updateUser(result.user);
       }).catch((error: FirebaseError) => {
         // Handle Errors here.
