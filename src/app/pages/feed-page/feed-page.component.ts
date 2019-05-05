@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DatabaseService } from 'src/app/shared/services/database.service';
+import { Observable } from 'rxjs';
+import { Post } from 'src/app/shared/models/post.model';
 
 @Component({
   selector: 'app-feed-page',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedPageComponent implements OnInit {
 
-  constructor() { }
+  posts: Observable<Post[]>;
+
+  constructor(private db: DatabaseService) { }
 
   ngOnInit() {
+    // posts = this.db.get
   }
 
 }

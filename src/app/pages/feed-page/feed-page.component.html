@@ -1,0 +1,33 @@
+
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Feed</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Feed</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+
+            <div class="col-xl-4 col-lg-4" *ngFor="let post of posts | async">
+              <div class="card">
+                <div class="card-body">
+                  <p class=card-text>{{post.textContent}}</p>
+                  <p class="text-muted">{{post.timestamp | date}}</p>
+                </div>
+              </div>
+            </div>
+
+        </div> <!-- .content -->

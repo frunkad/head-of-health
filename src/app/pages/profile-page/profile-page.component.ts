@@ -39,6 +39,16 @@ export class ProfilePageComponent implements OnInit {
     return this.db.createPost(p);
   }
 
+  postA() {
+    const p = <Post> {
+      'pid': '',
+      'textContent': this.newPostContent.value,
+      'timestamp': (new Date()).getTime().toString(),
+      'uid': 'anonymous'
+    };
+    return this.db.createPost(p);
+  }
+
   ngOnInit() {
   }
 

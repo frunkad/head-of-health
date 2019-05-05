@@ -13,3 +13,18 @@ exports.updatePostNumber = functions.database.ref('posts/{pid}').onCreate((snap,
         })
     });
 })
+
+exports.followerAdded = functions.database.ref('relationships/{rid}').onCreate((snap, context) => {
+    return database.ref(`users`).once('value', usnap => {
+        const users = usnap.val();
+        const rl = snap.val();
+        return Promise.all([
+            database.ref(`users/${rl['by']}`).update({
+                followingsCount: (users[rl['by']]['followingsCount'] || 0)+1
+            }),
+            database.ref(`users/${rl['to']}`).update({
+                followersCount: (users[rl['to']]['followersCount'] || 0)+1
+            })
+        ]);
+    });
+})

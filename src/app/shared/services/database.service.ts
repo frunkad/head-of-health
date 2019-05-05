@@ -35,4 +35,20 @@ export class DatabaseService {
     }
     return this.db.object<Post>(`posts/${post.pid}`).set(post);
   }
+
+  getEveryone(): Observable<User[]> {
+    return this.db.list<User>(`users`).valueChanges();
+  }
+
+  setFollow(by: string, to: string) {
+    if (by === to) {
+      return alert('You can"t follow yourself');
+    }
+    return this.db.list('relationships').push(
+      {
+        by: by,
+        to: to
+      }
+    );
+  }
 }
