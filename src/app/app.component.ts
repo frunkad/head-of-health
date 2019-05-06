@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from './shared/services/auth.service';
 import { User } from './shared/models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent {
 
   user: User;
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, private router: Router) {
     this.auth.user$.subscribe(user => {
       if (user == null) {
         this.user = null;
@@ -25,6 +26,6 @@ export class AppComponent {
   }
 
   logout() {
-    return this.auth.signOut();
+    return this.auth.signOut().then(() => this.router.navigate(['/', 'login']));
   }
 }
