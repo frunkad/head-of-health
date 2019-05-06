@@ -12,12 +12,12 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'head-of-health';
 
-  user: User;
+  user: User | boolean;
 
   constructor(private auth: AuthService, private router: Router) {
     this.auth.user$.subscribe(user => {
       if (user == null) {
-        this.user = null;
+        this.user = false;
       } else {
         this.user = user;
 
