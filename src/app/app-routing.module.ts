@@ -5,6 +5,7 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { PeopleComponent } from './pages/people/people.component';
 import { FeedPageComponent } from './pages/feed-page/feed-page.component';
 import { AnonComponent } from './pages/anon/anon.component';
+import { BlogsPageComponent } from './pages/blogs-page/blogs-page.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'feed',
     component: FeedPageComponent
+  },
+  {
+    path: 'blog',
+    component: BlogsPageComponent
   },
   {
     path: 'anonymous',
