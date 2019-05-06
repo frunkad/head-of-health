@@ -4,6 +4,10 @@ import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import { Post } from '../models/post.model';
 
+interface Realtionship {
+  by: string;
+  to: string;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -50,5 +54,9 @@ export class DatabaseService {
         to: to
       }
     );
+  }
+
+  getFollowings(u: string): Observable<{}[]> {
+    return this.db.list<Realtionship>(`relationships`, ref => ref.orderByChild('by').equalTo(u)).valueChanges();
   }
 }

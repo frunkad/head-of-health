@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { PeopleComponent } from './pages/people/people.component';
+import { FeedPageComponent } from './pages/feed-page/feed-page.component';
+import { AnonComponent } from './pages/anon/anon.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,14 @@ const routes: Routes = [
   {
     path: 'people',
     component: PeopleComponent
+  },
+  {
+    path: 'feed',
+    component: FeedPageComponent
+  },
+  {
+    path: 'anonymous',
+    component: AnonComponent
   },
   {
     path: '**',
