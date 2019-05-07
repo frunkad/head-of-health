@@ -6,6 +6,7 @@ import { PeopleComponent } from './pages/people/people.component';
 import { FeedPageComponent } from './pages/feed-page/feed-page.component';
 import { AnonComponent } from './pages/anon/anon.component';
 import { BlogsPageComponent } from './pages/blogs-page/blogs-page.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,7 @@ const routes: Routes = [
     component: FeedPageComponent
   },
   {
-    path: 'blog',
+    path: 'blogs',
     component: BlogsPageComponent
   },
   {
@@ -33,8 +34,12 @@ const routes: Routes = [
     component: AnonComponent
   },
   {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
     path: '**',
-    redirectTo: 'profile'
+    redirectTo: 'home'
   }
 ];
 

@@ -16,17 +16,17 @@ export class LoginPageComponent implements OnInit {
 
   loginWithGoogle() {
     return this.auth.signInWithGoogle().then(() => {
-      this.router.navigate(['/', 'feed']);
+      this.router.navigate(['/', 'profile']);
     });
   }
   loginWithFacebook() {
     return this.auth.signInWithFacebook().then(() => {
-      this.router.navigate(['/', 'feed']);
+      this.router.navigate(['/', 'profile']);
     });
   }
   loginWithTwitter() {
     return this.auth.signInWithTwitter().then(() => {
-      this.router.navigate(['/', 'feed']);
+      this.router.navigate(['/', 'profile']);
     });
   }
 

@@ -9,9 +9,10 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PeopleComponent } from './people/people.component';
 import { AnonComponent } from './anon/anon.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [ProfilePageComponent, FeedPageComponent, BlogsPageComponent, LoginPageComponent, PeopleComponent, AnonComponent],
+  declarations: [ProfilePageComponent, FeedPageComponent, BlogsPageComponent, LoginPageComponent, PeopleComponent, AnonComponent, HomeComponent],
   imports: [
     CommonModule,
     RouterModule,

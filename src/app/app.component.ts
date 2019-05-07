@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'head-of-health';
 
   user: User | boolean;
+  shouldShow = true;
 
   constructor(private auth: AuthService, private router: Router) {
     this.auth.user$.subscribe(user => {
@@ -23,6 +24,16 @@ export class AppComponent {
 
       }
     });
+    console.log(this.shouldShow, this.router.url);
+    this.router.events.subscribe(obs => {
+      console.log('a', obs['url']);
+      if (obs['url'] === '/home' || obs['url'] === '') {
+        this.shouldShow = false;
+      } else if (obs['url']) {
+        this.shouldShow = true;
+      }
+    });
+
   }
 
   logout() {
