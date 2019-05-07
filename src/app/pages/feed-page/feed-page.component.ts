@@ -12,10 +12,14 @@ import { User } from 'src/app/shared/models/user.model';
 })
 export class FeedPageComponent implements OnInit {
 
-  posts: Observable<Post[]>;
+  posts: Post[];
   user: User;
+  followings: string[];
+  mobs: Observable<Post[]>;
 
   constructor(private auth: AuthService, private db: DatabaseService) {
+    const observer = [];
+    this.posts = [];
     this.auth.user$.subscribe(user => {
       if (user == null) {
         this.user = null;
@@ -26,15 +30,26 @@ export class FeedPageComponent implements OnInit {
         followings.subscribe(val => {
           val.forEach(t => {
             console.log(t);
+            // this.followings.push(t['to']);
+            this.db.getAllPostsByUser(t['to']).subscribe(p => {
+              console.log(p);
+              p.forEach(pp => {
+                this.posts.push(pp);
+              });
+            });
           });
         });
       }
     });
   }
 
+  shouldShowPost(uid: string) {
+
+  }
+
   ngOnInit() {
     // posts = this.db.get
-    
+    // this.posts = this.db.getAllPosts();
   }
 
 }

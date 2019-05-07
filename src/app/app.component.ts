@@ -24,9 +24,9 @@ export class AppComponent {
 
       }
     });
-    console.log(this.shouldShow, this.router.url);
+    // console.log(this.shouldShow, this.router.url);
     this.router.events.subscribe(obs => {
-      console.log('a', obs['url']);
+      // console.log('a', obs['url']);
       if (obs['url'] === '/home' || obs['url'] === '') {
         this.shouldShow = false;
       } else if (obs['url']) {

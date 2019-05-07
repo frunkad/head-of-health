@@ -33,6 +33,10 @@ export class DatabaseService {
     return this.db.list<Post>(`posts`, ref => ref.orderByChild('uid').equalTo(uid)).valueChanges();
   }
 
+  getAllPosts(): Observable<Post[]> {
+    return this.db.list<Post>(`posts`, ref => ref.orderByChild('timestamp')).valueChanges();
+  }
+
   createPost(post: Post) {
     if (!post.pid) {
       post.pid = this.db.createPushId();

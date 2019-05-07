@@ -10,11 +10,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PeopleComponent } from './people/people.component';
 import { AnonComponent } from './anon/anon.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [ProfilePageComponent, FeedPageComponent, BlogsPageComponent, LoginPageComponent, PeopleComponent, AnonComponent, HomeComponent],
+  declarations: [
+    ProfilePageComponent,
+    FeedPageComponent,
+    BlogsPageComponent,
+    LoginPageComponent,
+    PeopleComponent,
+    AnonComponent,
+    HomeComponent
+  ],
   imports: [
     CommonModule,
+    HttpClientModule,
     RouterModule,
     SharedModule,
     FormsModule,

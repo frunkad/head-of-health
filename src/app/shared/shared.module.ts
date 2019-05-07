@@ -9,10 +9,12 @@ import { AuthService } from './services/auth.service';
 import { DatabaseService } from './services/database.service';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [HeaderComponent],
   imports: [
+    HttpClientModule,
     CommonModule,
     RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
