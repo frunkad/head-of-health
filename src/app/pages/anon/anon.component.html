@@ -22,12 +22,7 @@
       <div class="content mt-3">
 
           <div class="col-xl-4 col-lg-4" *ngFor="let post of posts | async">
-            <div class="card">
-              <div class="card-body">
-                <p class=card-text>{{post.textContent}}</p>
-                <p class="text-muted">{{post.timestamp | date}}</p>
-              </div>
-            </div>
+            <app-post [post]="post"></app-post>
           </div>
 
       </div> <!-- .content -->

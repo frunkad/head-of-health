@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from '../../models/post.model';
 import { DatabaseService } from '../../services/database.service';
-import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-post',

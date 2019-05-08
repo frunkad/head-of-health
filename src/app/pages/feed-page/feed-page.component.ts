@@ -41,11 +41,9 @@ export class FeedPageComponent implements OnInit {
         });
       }
     });
+    console.log(this.posts);
   }
 
-  shouldShowPost(uid: string) {
-
-  }
 
   ngOnInit() {
     // posts = this.db.get
