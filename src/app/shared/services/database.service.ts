@@ -22,6 +22,13 @@ export class DatabaseService {
     return this.db.object<User>(`users/${uid}`).valueChanges();
   }
 
+  getUsername(uid: string) {
+    if (uid === '' || uid === null ) {
+      return [null];
+    }
+    return this.db.object<any>(`users/${uid}/displayName`).valueChanges();
+  }
+
   updateUser(user: User): void | Promise<void> {
     if (user['uid'] === '' || user['uid'] === null) {
       return;

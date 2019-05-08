@@ -10,9 +10,10 @@ import { DatabaseService } from './services/database.service';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PostComponent } from './components/post/post.component';
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, PostComponent],
   imports: [
     HttpClientModule,
     CommonModule,
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireDatabase,
     { provide: FunctionsRegionToken, useValue: 'us-central1' }],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    PostComponent
   ]
 })
 export class SharedModule { }
