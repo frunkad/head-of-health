@@ -23,4 +23,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.document.body.className = 'is-flex';
   }
 
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
 }
