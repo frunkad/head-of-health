@@ -39,7 +39,8 @@
                                     <tr *ngFor="let person of everyone | async">
                                         <td>{{ person['displayName'] }}</td>
                                         <td>{{ person['email'] }}</td>
-                                        <td (click)="follow(person['uid'])">Follow</td>
+                                        <td *ngIf="!doesFollow(person['uid'])" ><button class="btn btn-primary rounded" (click)="follow(person['uid'])">Follow</button></td>
+                                        <td *ngIf="doesFollow(person['uid'])">Following </td>
                                     </tr>
                                 </tbody>
                             </table>
