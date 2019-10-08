@@ -16,7 +16,7 @@ export class LoginPageComponent implements OnInit {
 
   loginWithGoogle() {
     return this.auth.signInWithGoogle().then(() => {
-      this.router.navigate(['/', 'profile']);
+      this.router.navigate(['/profile']);
     });
   }
   loginWithFacebook() {

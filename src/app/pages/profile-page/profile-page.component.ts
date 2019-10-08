@@ -22,7 +22,7 @@ export class ProfilePageComponent implements OnInit {
     this.auth.user$.subscribe(user => {
       if (user == null) {
         this.user = null;
-        this.router.navigate(['/', 'login']);
+        this.router.navigate(['/login']);
       } else {
         this.user = user;
         this.posts = db.getAllPostsByUser(this.user.uid);

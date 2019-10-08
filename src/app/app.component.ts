@@ -26,17 +26,18 @@ export class AppComponent {
     });
     // console.log(this.shouldShow, this.router.url);
     this.router.events.subscribe(obs => {
-      // console.log('a', obs['url']);
-      if (obs['url'] === '/home' || obs['url'] === '') {
+      console.log('a', obs['url']);
+      if (obs['url'] === '/home' || obs['url'] === '' || obs['url'] === '/' || obs['url'] === '/login' || obs['url'] === 'login' || obs['url'] === 'home') {
         this.shouldShow = false;
       } else if (obs['url']) {
         this.shouldShow = true;
       }
+      return obs;
     });
 
   }
 
   logout() {
-    return this.auth.signOut().then(() => this.router.navigate(['/', 'login']));
+    return this.auth.signOut().then(() => this.router.navigate(['/login']));
   }
 }
